@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Concert+One|Contrail+One|Fredoka+One|Kanit&display=swap');
+
+/* @import url('https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js');
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'); */
+
+body {
+    /* padding: 10px; */
+    /* font-family: 'Contrail One', cursive; */
+    font-family: 'Kanit', sans-serif;
+    /* font-family: 'Fredoka One', cursive; */
+    color: rgb(0, 0, 0);
+    margin: 0;
+    /* margin: 50px; */
+    /* margin-left: 50px;
+    margin-right: 50px; */
+    width: 100%;
+    height: 100%;
+}
+
+.top {
+    font-family: 'Concert One', cursive;
+    font-size: 25px;
+    padding: 5px 10px;
+    background-color: #358967;
+    color: rgb(0, 0, 0);
+    /* margin-top: 45px; */
+}
+
+.try {
+    margin-top: 45px;
+    height: auto;
+    padding: 0px;
+    width: auto;
+    background-color: #aee0eb;
+}
+
+.monitor {
+    margin-top: 45px;
+    padding: 0px;
+    width: auto;
+    background-color: #68bd6c;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    /* background-color: #2196F3; */
+    padding: 0px 30px;
+    margin: 0px;
+}
+
+.grid-container>div.one {
+    background-color: #f66555;
+    text-align: center;
+    border-radius: 10px;
+    margin: 9px;
+}
+
+.grid-container>div.two {
+    background-color: #ffd166;
+    text-align: center;
+    border-radius: 10px;
+    margin: 9px;
+}
+
+.grid-container>div.three {
+    background-color: #06d6a0;
+    text-align: center;
+    border-radius: 10px;
+    margin: 9px;
+}
+
+.glyphicon {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 30px;
+    margin-top: 0;
+    border-radius: 0;
+}
+
+.map {
+    max-width: 1000px;
+    margin: auto;
+    /*layout*/
+    margin-top: 93px;
+    padding: 0px;
+    width: auto;
+}
+
+agm-map {
+    height: 375px;
+    width: 100%;
+}
+
+.footer {
+    font-family: 'Contrail One', cursive;
+    background-color: #008cd0;
+    padding: 0px;
+    text-align: center;
+    font-size: 25px;
+    position: bottom;
+    margin-bottom: 0px;
+}
+
+.table {
+    background-color: #d9f0ea;
+    border-style: double;
+    border-color: #714f45;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* margin-top: 5px;
+    margin-bottom: 0px; */
+}
+
+h2 {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Pacifico', cursive;
+}
+
+h1 {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Lobster', cursive;
+}
+
+h3 {
+    padding: 0px;
+    margin-top: 10px;
+    font-family: 'Kanit', sans-serif;
+}

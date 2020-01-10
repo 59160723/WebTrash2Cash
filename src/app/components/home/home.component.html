@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trash2Cash</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="top navbar-fixed-top">
+        <p style="float:left">Trash2Cash</p>
+        <!-- <p style="float:right">login</p> -->
+    </div>
+    <div class="try">
+        <div class="monitor navbar-fixed-top">
+            <div class="grid-container">
+
+                <div class="one">
+                    <div class="row">
+                        <h5>ขยะเต็มถัง</h5>
+                        <h1>9
+                            <div class="glyphicon glyphicon-trash"></div>
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="two">
+                    <div class="row">
+                        <h5>ขยะมีครึ่งถัง</h5>
+                        <h1>4
+                            <div class="glyphicon glyphicon-trash"></div>
+                        </h1>
+                    </div>
+                </div>
+                <div class="three">
+                    <div class="row">
+                        <h5>ขยะมีน้อย</h5>
+                        <h1>5
+                            <div class="glyphicon glyphicon-trash"></div>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="map">
+
+            <agm-map [latitude]="latitude" [longitude]="longitude">
+                <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+            </agm-map>
+        </div>
+
+        <div class="container">
+
+            <h3>รายการจุดติดตั้งของถังขยะ</h3>
+
+            <div class="table">
+                <h4>ตลาดนัดปาร์คอิน</h4>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                        40% Complete (success)
+                    </div>
+                </div>
+            </div>
+
+            <div class="table">
+                <h4>มหาวิทยาลัยบูรพา</h4>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                        50% Complete (info)
+                    </div>
+                </div>
+            </div>
+
+            <div class="table">
+                <h4>ชายหาดบางแสน</h4>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+                        60% Complete (warning)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="footer">
+            <p>Faculty of Informatics, Burapha University. </p>
+        </div>
+    </div>
+</body>
+
+</html>
