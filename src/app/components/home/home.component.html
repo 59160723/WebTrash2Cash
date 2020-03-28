@@ -13,88 +13,117 @@
 
 <body>
 
+
     <div class="top navbar-fixed-top">
-        <p style="float:left">Trash2Cash</p>
-        <!-- <p style="float:right">login</p> -->
-    </div>
-    <div class="try">
-        <div class="monitor navbar-fixed-top">
-            <div class="grid-container">
-
-                <div class="one">
-                    <div class="row">
-                        <h5>ขยะเต็มถัง</h5>
-                        <h1>9
-                            <div class="glyphicon glyphicon-trash"></div>
-                        </h1>
-                    </div>
+        <div class="grid-container">
+            <div class="webname">
+                <div class="row">
+                    <p>Trash2Cash</p>
+                    <!-- if you want to have icon you just low of the size of nameweb -->
+                    <!-- <h1>9
+                        <div class="glyphicon glyphicon-trash "></div>
+                    </h1> -->
                 </div>
-
-                <div class="two">
-                    <div class="row">
-                        <h5>ขยะมีครึ่งถัง</h5>
-                        <h1>4
-                            <div class="glyphicon glyphicon-trash"></div>
-                        </h1>
-                    </div>
+            </div>
+            <div class="one">
+                <div class="row ">
+                    <h4>ขยะเต็มถัง</h4>
+                    <h1>{{fullStatus}}
+                        <div class="glyphicon glyphicon-trash "></div>
+                    </h1>
                 </div>
-                <div class="three">
-                    <div class="row">
-                        <h5>ขยะมีน้อย</h5>
-                        <h1>5
-                            <div class="glyphicon glyphicon-trash"></div>
-                        </h1>
-                    </div>
+            </div>
+
+
+            <div class="two ">
+                <div class="row ">
+                    <h4>ขยะมีครึ่งถัง</h4>
+                    <h1>{{midStatus}}
+                        <div class="glyphicon glyphicon-trash "></div>
+                    </h1>
+                </div>
+            </div>
+            <div class="three ">
+                <div class="row ">
+                    <h4>ขยะมีน้อย</h4>
+                    <h1>{{emptyStatus}}
+                        <div class="glyphicon glyphicon-trash "></div>
+                    </h1>
                 </div>
             </div>
         </div>
+    </div>
+
+
+
+    <div class="try">
         <br>
         <div class="map">
+            <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" (mapClick)=mapClick($event)>
+                <agm-marker *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng" [title]="marker.name" [iconUrl]="marker.icon" [markerDraggable]="false" (markerClick)=markerClick($event)></agm-marker>
 
-            <agm-map [latitude]="latitude" [longitude]="longitude">
-                <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
             </agm-map>
         </div>
 
-        <div class="container">
+
+
+        <div class=" container ">
 
             <h3>รายการจุดติดตั้งของถังขยะ</h3>
 
-            <div class="table">
-                <h4>ตลาดนัดปาร์คอิน</h4>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-                        40% Complete (success)
+            <div class="table " *ngFor="let item of bin">
+                <h4>{{item.name}}</h4>
+                <div class="row row-no-gutters ">
+
+                    <div class="col-xs-6 col-md-4 ">
+                        ถังขวดแก้ว
+                        <div class="progress ">
+
+                            <div *ngIf="item.glass_qty >= 80" class="progress-bar progress-bar-danger progress-bar-striped " role="progressbar " aria-valuenow="item.glass_qty" aria-valuemin="0 " aria-valuemax="100 " [ngStyle]="setStyle(item.glass_qty)">
+                                {{item.glass_qty}}%
+                            </div>
+                            <div *ngIf="item.glass_qty >= 50 && item.glass_qty <=79" class="progress-bar progress-bar-warning progress-bar-striped " role="progressbar " aria-valuenow="item.glass_qty" aria-valuemin="0 " aria-valuemax="100 " [ngStyle]="setStyle(item.glass_qty)">
+                                {{item.glass_qty}}%
+                            </div>
+                            <div *ngIf="item.glass_qty < 50" class="progress-bar progress-bar-success progress-bar-striped " role="progressbar " aria-valuenow="item.glass_qty" aria-valuemin="0 " aria-valuemax="100 " [ngStyle]="setStyle(item.glass_qty)">
+                                {{item.glass_qty}}%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-4 ">
+                        ถังขวดพลาสติก
+                        <div class="progress ">
+                            <div *ngIf="item.plastic_qty >= 80" class="progress-bar progress-bar-danger progress-bar-striped " role="progressbar " aria-valuenow="item.plastic_qty" aria-valuemin="0 " aria-valuemax="100 " [ngStyle]="setStyle(item.plastic_qty)">
+                                {{item.plastic_qty}}%
+                            </div>
+                            <div *ngIf="item.plastic_qty >= 50 && item.plastic_qty <=79" class="progress-bar progress-bar-warning progress-bar-striped " role="progressbar " aria-valuenow="item.plastic_qty" aria-valuemin="0 " aria-valuemax="100 " [ngStyle]="setStyle(item.plastic_qty)">
+                                {{item.plastic_qty}}%
+                            </div>
+                            <div *ngIf="item.plastic_qty < 50" class="progress-bar progress-bar-success progress-bar-striped " role="progressbar " aria-valuenow="item.plastic_qty" aria-valuemin="0 " aria-valuemax="100 " [ngStyle]="setStyle(item.plastic_qty)">
+                                {{item.plastic_qty}}%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-4 ">
+                        ถังกระป๋องโลหะ
+                        <div class="progress ">
+                            <div *ngIf="item.can_qty >= 80" class="progress-bar progress-bar-danger progress-bar-striped " role="progressbar " aria-valuenow="item.can_qty" aria-valuemin="0 " aria-valuemax="100 " [ngStyle]="setStyle(item.can_qty)">
+                                {{item.can_qty}}%
+                            </div>
+                            <div *ngIf="item.can_qty >= 50 && item.can_qty <=79" class="progress-bar progress-bar-warning progress-bar-striped " role="progressbar " aria-valuenow="item.can_qty" aria-valuemin="0 " aria-valuemax="100 " [ngStyle]="setStyle(item.can_qty)">
+                                {{item.can_qty}}%
+                            </div>
+                            <div *ngIf="item.can_qty < 50" class="progress-bar progress-bar-success progress-bar-striped " role="progressbar " aria-valuenow="item.can_qty" aria-valuemin="0 " aria-valuemax="100 " [ngStyle]="setStyle(item.can_qty)">
+                                {{item.can_qty}}%
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="table">
-                <h4>มหาวิทยาลัยบูรพา</h4>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                        50% Complete (info)
-                    </div>
-                </div>
-            </div>
-
-            <div class="table">
-                <h4>ชายหาดบางแสน</h4>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
-                        60% Complete (warning)
-                    </div>
-                </div>
-            </div>
         </div>
-
-
-
-
-        <div class="footer">
+        <div class="footer ">
             <p>Faculty of Informatics, Burapha University. </p>
         </div>
     </div>
 </body>
-
-</html>

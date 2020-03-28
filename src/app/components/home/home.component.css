@@ -3,7 +3,26 @@
 /* @import url('https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js');
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'); */
 
+h2 {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Pacifico', cursive;
+}
+
+h1 {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Lobster', cursive;
+}
+
+h3 {
+    padding: 0px;
+    margin-top: 10px;
+    font-family: 'Kanit', sans-serif;
+}
+
 body {
+    background-color: #aee0eb;
     /* padding: 10px; */
     /* font-family: 'Contrail One', cursive; */
     font-family: 'Kanit', sans-serif;
@@ -18,11 +37,11 @@ body {
 }
 
 .top {
-    font-family: 'Concert One', cursive;
-    font-size: 25px;
+    /* font-family: 'Concert One', cursive; */
+    /* font-size: 25px; */
     padding: 5px 10px;
     background-color: #358967;
-    color: rgb(0, 0, 0);
+    /* color: rgb(255, 255, 255); */
     /* margin-top: 45px; */
 }
 
@@ -43,14 +62,26 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto;
+    /* grid-template-columns: auto auto auto; */
+    grid-template-columns: 1fr 2fr 2fr 2fr;
     grid-gap: 10px;
-    /* background-color: #2196F3; */
     padding: 0px 30px;
     margin: 0px;
 }
 
+.grid-container>div.webname {
+    font-family: 'Concert One', cursive;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    background-color: #358967;
+    text-align: center;
+    border-radius: 10px;
+    margin: 9px;
+}
+
 .grid-container>div.one {
+    font-family: 'Kanit', sans-serif;
+    color: rgb(0, 0, 0);
     background-color: #f66555;
     text-align: center;
     border-radius: 10px;
@@ -58,6 +89,8 @@ body {
 }
 
 .grid-container>div.two {
+    font-family: 'Kanit', sans-serif;
+    color: rgb(0, 0, 0);
     background-color: #ffd166;
     text-align: center;
     border-radius: 10px;
@@ -65,6 +98,8 @@ body {
 }
 
 .grid-container>div.three {
+    font-family: 'Kanit', sans-serif;
+    color: rgb(0, 0, 0);
     background-color: #06d6a0;
     text-align: center;
     border-radius: 10px;
@@ -80,27 +115,20 @@ body {
 }
 
 .map {
+    max-width: 100%;
+    /* width: 100%; */
     max-width: 1000px;
     margin: auto;
-    /*layout*/
-    margin-top: 93px;
+    /*pixel of layout after the top bar */
+    /* margin-top: 105px; */
+    margin-top: 55px;
     padding: 0px;
-    width: auto;
 }
 
 agm-map {
     height: 375px;
-    width: 100%;
-}
-
-.footer {
-    font-family: 'Contrail One', cursive;
-    background-color: #008cd0;
-    padding: 0px;
-    text-align: center;
-    font-size: 25px;
-    position: bottom;
-    margin-bottom: 0px;
+    /* width: 100%; */
+    width: auto;
 }
 
 .table {
@@ -113,20 +141,12 @@ agm-map {
     margin-bottom: 0px; */
 }
 
-h2 {
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Pacifico', cursive;
-}
-
-h1 {
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Lobster', cursive;
-}
-
-h3 {
-    padding: 0px;
-    margin-top: 10px;
-    font-family: 'Kanit', sans-serif;
+.footer {
+    font-family: 'Contrail One', cursive;
+    background-color: #008cd0;
+    padding: 4px;
+    text-align: center;
+    font-size: 25px;
+    position: bottom;
+    margin-bottom: 0px;
 }
